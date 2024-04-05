@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃</title>
+    <style>
+      div,
+      header,
+      footer {
+        border: 5px solid red;
+        /* 안적어도 block */
+        /* display: block; */
+      }
+      main {
+        display: none;
+      }
+      .community {
+        display: flex;
+        /* justify-content: space-between; */
+      }
+      /* 안써주면 default */
+      .news {
+        width: 25%;
+        height: 400px;
+      }
+      .notice {
+        width: 25%;
+        height: 400px;
+      }
+      .banner {
+        width: 25%;
+        height: 400px;
+      }
+      .product {
+        width: 25%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 상단 -->
+      <header class="header">상단</header>
+      <!-- 메인 -->
+      <main class="main">
+        <div class="slide">슬라이드</div>
+        <div class="community">
+          <div class="news">뉴스</div>
+          <div class="notice">공지사항</div>
+          <div class="banner">배너</div>
+          <div class="product">제품소개</div>
+        </div>
+      </main>
+      <!-- 하단 -->
+      <footer class="footer">하단</footer>
+    </div>
+  </body>
+</html>
