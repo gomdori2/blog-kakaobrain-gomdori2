@@ -11,7 +11,14 @@
   /* 포커싱 된 거에 테두리 없애기 */
   /* outline-style: none; */
 }
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 html {
+  /* 가로 스크롤 바는 안나오게. */
+  overflow-x: hidden;
 }
 body {
   /* 우선글꼴 배치 순서 */
@@ -24,5 +31,33 @@ body {
   font-style: normal;
 }
 
+.br-20 {
+  border-radius: 20px;
+}
+
+.bt-wrap {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* 버튼이 여러개 들어올수 있어서 */
+  gap: 3px;
+  margin-bottom: 60px;
+}
+
+.bt-more {
+  display: block;
+  border: 1px solid #000;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 11px 20px;
+  line-height: 20px;
+  transition: all 0.1s;
+}
+.bt-more:hover {
+  background-color: #000;
+  color: #fff;
+}
 .wrap {
 }

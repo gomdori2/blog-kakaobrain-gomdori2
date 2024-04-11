@@ -18,16 +18,18 @@
 
 .inner {
   display: flex;
-  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+
   width: calc(100% - 30px);
   max-width: 1170px;
   height: 70px;
-  justify-content: space-between;
-  align-items: center;
+  margin: 0 auto;
   /* 남아있는 공간을 중앙으로 */
 }
 .header-logo {
 }
+
 .header-logo-link {
   display: flex;
   align-items: center;
@@ -38,6 +40,7 @@
   height: 22px;
   margin-right: 5px;
 }
+
 /* 앞에 class에 children 중 img태그를 찾아라 */
 .header-logo-slide img {
   width: 68px;
@@ -70,13 +73,34 @@
   color: #1f24ff;
 }
 
-.navi-list li a img {
+/* .navi-list li a {
   width: 24px;
   height: 24px;
+} */
+/* ./images/icon/icon-hbr.png */
+.navi-search a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/icon/icon-search.png") no-repeat center;
+  background-size: contain;
+}
+.navi-search a:hover {
+  background: url("../images/icon/icon-search-hover.png") no-repeat center;
+  background-size: contain;
 }
 .mobile-menu {
   display: none;
 }
+
+.mobile-menu a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/icon/icon-hbr.png") no-repeat center;
+  background-size: contain;
+}
+
 /* 반응형 all 띄워쓰기 해야함 */
 /* 자신이 바꾸고 싶은것만 css에 추가할 것 */
 @media all and (max-width: 1024px) {
