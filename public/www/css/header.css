@@ -42,9 +42,22 @@
 }
 
 /* 앞에 class에 children 중 img태그를 찾아라 */
-.header-logo-slide img {
+.header-logo-slide {
   width: 68px;
   height: 31px;
+}
+
+.swlogo {
+  width: 100%;
+  height: 100%;
+}
+/* 흰색 배경으로 뒷 이미지를 가려줌. */
+.swlogo .swiper-slide {
+  background: #fff;
+}
+
+.header-logo-slide img {
+  width: 100%;
 }
 
 .header-navi {

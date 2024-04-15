@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <!-- cdn? 링크 방식 -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://meyerweb.com/eric/tools/css/reset/reset.css"
-    /> -->
-
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- 외부 js 파일 방식 진행 -->
+    <script src="./js/logo.js"></script>
   </head>
   <body>
     <div></div>
@@ -33,7 +32,38 @@
               <!-- start 로고 슬라이드 교수님 컨벤션 id = js / class = css -->
               <!-- end 로고 슬라이드 -->
               <div class="header-logo-slide" id="logo-slide">
-                <img src="./images/etc/logo-blog01.png" alt="카카오브레인 블로그"/>
+                <!-- swlogo -> swiper-logo -->
+                <div class="swiper swlogo">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog01.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog02.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog03.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog04.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog05.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog06.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog07.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog08.png" alt="카카오브레인 블로그"/>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="./images/etc/logo-blog09.png" alt="카카오브레인 블로그"/>
+                    </div>
+                  </div>
+                </div>
               </div>
             </a>
           </div>
@@ -281,4 +311,5 @@
       </footer>
     </div>
   </body>
-</html>
+  </html>
+      
