@@ -42,7 +42,6 @@ window.addEventListener("load", function () {
       disableOnInteraction: false,
     },
   });
-  console.log(logoSlide);
   // 무조건 모션이 재생되면 안됨.
   // 위에 var logoSlide의 객체 내부 메서드 실행
   logoSlide.autoplay.stop();

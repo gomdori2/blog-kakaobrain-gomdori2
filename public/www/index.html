@@ -17,9 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- 외부 js 파일 방식 진행 -->
     <script src="./js/logo.js"></script>
+    <script src="./js/topslide.js"></script>
+    <script src="./js/bannerslide.js"></script>
   </head>
   <body>
-    <div></div>
     <!-- 전체 레이아웃 -->
     <div class="wrap">
       <!-- 상단 레이아웃 -->
@@ -90,23 +91,35 @@
         <div class="inner">
           <!-- 메인상단 영역 -->
           <div class="main-top">
-            <!-- 슬라이드 -->
+            
+            
             <div class="main-top-slide br-20">
-              <a href="#">
-                <p class="slide-title">
-                  카카오브레인의<br/>
-                  연구문화
-                </p>
-              </a>
+              <!-- Swiper -->
+              <div class="swiper topslide">
+                <div class="swiper-wrapper">
+                 <!-- 외부 데이터 연동 -->
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>    
             </div>
             <!-- 타이틀 배너 슬라이드 -->
             <div class="main-top-banner br-20">
-              <!-- 바로가기 -->
-              <a href="#">
-                <p class="slide-title">
-                  영입 중
-                </p>
-              </a>
+              <!-- start 타이틀 배너 -->
+              <div class="swiper bannerslide">
+                <div class="swiper-wrapper">
+                  <!-- 외부 데이터 연동 -->
+                  <!-- <div class="swiper-slide">
+                    <a href="#">
+                      <p class="slide-title">
+                        영입 중
+                      </p>
+                    </a>
+                  </div> -->
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- end 타이틀 배너 -->
+              
             </div>
           </div>
           <!-- 메인하단영역 -->
