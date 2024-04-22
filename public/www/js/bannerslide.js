@@ -8,38 +8,50 @@ window.addEventListener("load", () => {
     })
     .then((result) => {
       let tags = "";
-
-      for (let i = 0; i < result.length; i++) {
-        const obj = result[i];
+      result.forEach((item) => {
         const temp = `<div class="swiper-slide">
-        <a href="${obj.url}" style="background : url('./images/${obj.pic}') no-repeat center; background-size : cover;">
-          <p class="slide-title">${obj.title}</p>
+        <a href="${item.url}" style="background : url('./images/${item.pic}') no-repeat center; background-size : cover;">
+          <p class="slide-title">${item.title}</p>
         </a>
       </div>`;
         tags += temp;
-      }
+      });
+      // for (let i = 0; i < result.length; i++) {
+      //   const obj = result[i];
+      //   const temp = `<div class="swiper-slide">
+      //   <a href="${obj.url}" style="background : url('./images/${obj.pic}') no-repeat center; background-size : cover;">
+      //     <p class="slide-title">${obj.title}</p>
+      //   </a>
+      // </div>`;
+      //   tags += temp;
+      // }
 
-      const whereTag = document.querySelector(".bannerslide .swiper-wrapper");
-      whereTag.innerHTML = tags;
+      const whereTag = {
+        slideTag: document.querySelector(".bannerslide .swiper-wrapper"),
+        eventConTag: document.querySelector(".main-top-slide"),
+      };
+
+      whereTag.slideTag.innerHTML = tags;
 
       const bannerSlide = new Swiper(".bannerslide", {
         loop: true,
         speed: 800,
         autoplay: {
           delay: 2500,
+          disableOnInteraction: false,
         },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
       });
-      // whereTag.addEventListener("mouseenter", function () {
-      //   bannerSlide.autoplay.start();
-      // });
+      whereTag.eventConTag.addEventListener("mouseenter", function () {
+        bannerSlide.autoplay.start();
+      });
 
-      // whereTag.addEventListener("mouseleave", function () {
-      //   bannerSlide.autoplay.stop();
-      // });
+      whereTag.eventConTag.addEventListener("mouseleave", function () {
+        bannerSlide.autoplay.stop();
+      });
     })
     .catch((error) => {
       console.log(error);

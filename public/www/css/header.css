@@ -4,6 +4,11 @@
 /* 다른사람 파일 고치지말것. */
 /* width 안적어주면 100% */
 .header {
+  /* 웹브라우저가 기준이 된다. */
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  top: 0;
   /* calc 총크기 왼쪽 공간 15px 오른쪽 공간 15px */
   /* display: flex; */
   /* max-width: 1170px; */
@@ -11,8 +16,13 @@
   width: 100%;
   height: 70px;
   background-color: #ffffff;
-  border-bottom: 1px solid #e6e5e6;
+  border-bottom: 1px solid #ffffff;
 }
+
+.line-active {
+  border-bottom: 1px solid #e6e5e6 !important;
+}
+
 /* 1. class 주기 x */
 /* html 태그 순서대로 class css 주기 덮어쓸까봐 */
 
