@@ -213,6 +213,17 @@
   background-size: 100%;
 }
 
+.main-bottom-list-picks {
+}
+.cardslide {
+  width: 100%;
+  height: 100%;
+  overflow: visible !important;
+}
+
+.cardslide .swiper-wrapper {
+  display: block;
+}
 @media all and (max-width: 1024px) {
   .main-bottom {
     /* 화면 크기 줄이면 요소들을 내려야한다. */
@@ -228,10 +239,6 @@
   .list-box-img {
     height: 74.21vw;
     max-height: 760px;
-  }
-  .main-bottom-cards {
-    width: 100%;
-    max-width: 100%;
   }
 }
 .main-bottom-cards {
@@ -294,11 +301,14 @@
 
 @media all and (max-width: 1024px) {
   .main-bottom-cards {
-    max-width: 100%;
-    width: 100%;
+    width: 1024px !important;
+    max-width: 1024px !important;
   }
   .card-link {
     width: 240px;
     height: 266px;
+  }
+  .cardslide .swiper-wrapper {
+    display: flex;
   }
 }
