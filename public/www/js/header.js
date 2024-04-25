@@ -40,3 +40,50 @@ window.addEventListener("load", function () {
     showLine(header, headerActiveValue, headerActiveClass, window.scrollY);
   });
 });
+
+window.addEventListener("load", function () {
+  // 필요로 한 DOM 요소 보관
+  // 버튼
+  const mbBt = document.querySelector(".mobile-menu a");
+  // 배경
+  const mbBg = document.querySelector(".mb-header-bg");
+  // 메뉴
+  const mbMenu = document.querySelector(".mb-header-menu");
+  let mbMenuOpen = false;
+
+  // 2. 버튼 기능
+  // 2.1. 클릭하면 아이콘을 바꾼다.
+  // 2.2. 클릭하면 모바일 메뉴 및 배경을 보여준다.
+
+  mbBt.addEventListener("click", (event) => {
+    // a 태그 이므로 웹브라우저가 갱신 된다.
+    // a 태그가 작동이 안되도록 기능을 막는다.
+    event.preventDefault();
+    // 아이콘 바꾸기
+    if (mbMenuOpen) {
+      mbBt.classList.remove("mobile-menu-open");
+      mbBg.classList.remove("mb-header-bg-show");
+      mbMenu.classList.remove("mb-Menu-show");
+      mbMenuOpen = false;
+    } else {
+      // 메뉴가 펼침이 아닌데 사용자가 클릭하면 메뉴를 펼침.
+      mbBt.classList.add("mobile-menu-open");
+      mbBg.classList.add("mb-header-bg-show");
+      mbMenu.classList.add("mb-Menu-show");
+      mbMenuOpen = true;
+    }
+  });
+
+  // 반응형 코드
+  window.addEventListener("resize", function () {
+    const winWidth = window.innerWidth;
+    if (winWidth > 1024) {
+      if (mbMenuOpen) {
+        mbBt.classList.remove("mobile-menu-open");
+        mbBg.classList.remove("mb-header-bg-show");
+        mbMenu.classList.remove("mb-Menu-show");
+        mbMenuOpen = false;
+      }
+    }
+  });
+});
