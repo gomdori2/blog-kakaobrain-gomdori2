@@ -37,14 +37,15 @@ window.addEventListener("load", function () {
       // 원하는 장소에 출력해 보자.
       // 2. 자료를 이용해서 슬라이드에 배치할 html 을 만든다.
       const whereTag = {
-        slideTag: document.querySelector(".topslide .swiper-wrapper"),
         eventConTag: document.querySelector(".main-top-slide"),
+        slideTag: document.querySelector(".topslide .swiper-wrapper"),
       };
       whereTag.slideTag.innerHTML = slideTags;
 
       // 3. html 완성 후 swiper 를 생성한다.
       // 기본코드를 넣어보자
-
+      // 인스턴스 생성 new Swiper
+      // 객체 생성 문법을 이용해 만든 변수 - 복제본
       const topSlide = new Swiper(".topslide", {
         loop: true,
         speed: 800,
@@ -56,7 +57,9 @@ window.addEventListener("load", function () {
           clickable: true,
         },
       });
-      whereTag.eventConTag.addEventListener("mouseenter", function (e) {
+
+      // 4. 마우스 오버시 슬라이드를 일시 멈춤 및 재 실행
+      whereTag.eventConTag.addEventListener("mouseenter", function () {
         topSlide.autoplay.stop();
       });
 

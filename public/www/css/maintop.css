@@ -1,0 +1,118 @@
+.main-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.main-top-slide {
+  /* 반응형 */
+  /* 65.8119658
+      770/1170 * 100
+    */
+  width: 65.81%;
+  max-width: 770px;
+  /* 세로로 비율을 만들어 낼때 반드시!! 너비가 기준 */
+  /* 470(높이) / 1170(너비) * 100 */
+  height: 40.17vw;
+  max-height: 470px;
+  overflow: hidden;
+}
+.topslide {
+  width: 100%;
+  height: 100%;
+}
+.topslide .swiper-pagination {
+  bottom: 30px !important;
+}
+
+.topslide .swiper-pagination-bullet {
+  width: 4px !important;
+  height: 4px !important;
+  margin: 0 auto;
+  background: #fff !important;
+  transition: width 0.3s !important;
+  opacity: 0.7 !important;
+  border-radius: 4px !important;
+}
+
+.topslide .swiper-pagination-bullet-active {
+  width: 20px !important;
+  background: #fff !important;
+  opacity: 1;
+}
+
+.main-top-slide a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 40px;
+  background: url("../images/b1.png") no-repeat center;
+  background-size: cover;
+}
+/* 가로가 변하는 비율만큼 세로가 변하는 경우. */
+/* 고정인 경우 */
+.main-top-banner {
+  /* 370/1170 * 100 */
+  width: 31.62%;
+  max-width: 370px;
+
+  height: 40.17vw;
+  max-height: 470px;
+
+  overflow: hidden;
+}
+.bannerslide {
+  width: 100%;
+  height: 100%;
+}
+.bannerslide .swiper-pagination {
+  bottom: 30px !important;
+}
+
+.bannerslide .swiper-pagination-bullet {
+  width: 4px !important;
+  height: 4px !important;
+  margin: 0 auto;
+  background: #fff !important;
+  transition: width 0.3s !important;
+  opacity: 0.7 !important;
+  border-radius: 4px !important;
+}
+
+.bannerslide .swiper-pagination-bullet-active {
+  width: 20px !important;
+  background: #fff !important;
+  opacity: 1;
+}
+.main-top-banner a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 40px;
+  background: url("../images/br.png") no-repeat center;
+  background-size: cover;
+}
+.slide-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: right;
+}
+/* 반응형 */
+@media all and (max-width: 1024px) {
+  .main-top-slide {
+    width: 100%;
+    max-width: 100%;
+
+    height: 100vw;
+    max-height: 1240px;
+  }
+  .main-top-banner {
+    display: none;
+  }
+}
