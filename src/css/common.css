@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* noto sans kr 폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+/* inter 폰트 > 영어만 사용가능  */
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+KR:wght@100..900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 옵션 */
+  /* 포커싱 된 거에 테두리 없애기 */
+  outline-style: none;
+  box-sizing: border-box;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+html {
+  /* 가로 스크롤 바는 안나오게. */
+  overflow-x: hidden;
+}
+body {
+  /* 우선글꼴 배치 순서 */
+  /* 영어는 inter 한글은 noto sans */
+  /* 왜냐하면 inter가 영어만 지원 순서에 따라 영어는 덮어쓰고 한글은 x라 그럼 */
+  /*  */
+  font-family: "Inter", "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-optical-sizing: auto;
+}
+
+.br-20 {
+  border-radius: 20px;
+}
+
+.bt-wrap {
+  width: 100%;
+  display: flex;
+  /* 버튼이 여러개 들어올수 있어서 */
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.bt-more {
+  display: block;
+  padding: 11px 20px;
+  border: 1px solid #000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  transition: all 0.1s;
+  border-radius: 20px;
+}
+.bt-more:hover {
+  background-color: #000;
+  color: #fff;
+}
+.wrap {
+  padding-top: 70px;
+}
+
+/* *********************************************** header에서 온 친구 *********************************************** */
+
+.inner {
+  width: calc(100% - 30px);
+  max-width: 1170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* 남아있는 공간을 중앙으로 */
+}
