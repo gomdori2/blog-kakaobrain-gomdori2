@@ -34,9 +34,7 @@ const MainBottom = () => {
         <div className="main-bottom-cards-slide">
           {/* <!-- 외부데이터 연동 --> */}
           <div className="swiper cardslide">
-            <div className="swiper-wrapper">
-              {/* <!-- 슬라이드들을 배치 --> */}
-            </div>
+            <div className="swiper-wrapper">{/* <!-- 슬라이드들을 배치 --> */}</div>
           </div>
         </div>
 

@@ -1,6 +1,8 @@
+import React from "react";
 import MainTop from "./MainTop";
 import MainBottom from "./MainBottom";
 import "../css/main.css";
+
 const Main = () => {
   return (
     <main className="main">

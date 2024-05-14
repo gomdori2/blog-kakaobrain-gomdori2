@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
   const dataUrl = "./apis/topslide.json";
 
   fetch(dataUrl)
-    .then((response) => {
+    .then(response => {
       // Step 1. 자료 받아서 json 변경하기
 
       // 이 문장은 변경 X
@@ -17,12 +17,12 @@ window.addEventListener("load", function () {
       // 변환된 결과를 돌려주기
       return data;
     })
-    .then((result) => {
+    .then(result => {
       // Step 2. json 변경된 데이터 활용하기.
       // 전체 글자 모음
       let slideTags = "";
 
-      result.forEach((item) => {
+      result.forEach(item => {
         const aaa = `<div class="swiper-slide">
                             <a href="${item.url}" style="background : url('./images/${item.pic}') no-repeat center; background-size : cover;">
                                 <p class="slide-title">
@@ -67,7 +67,7 @@ window.addEventListener("load", function () {
         topSlide.autoplay.start();
       });
     })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
     });
 });

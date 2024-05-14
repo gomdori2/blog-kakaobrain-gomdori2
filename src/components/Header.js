@@ -1,130 +1,118 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../css/header.css";
-const Header = () => {
+import SlideLogo from "./SlideLogo";
+const Header = function ({ clickMbbt, mbMenuOpen }) {
+  //console.log(props);
+  //const clickMbbt = props.clickMbbt;
   // js 코딩 자리
-  // JSX Element 렌더링 완료 시 - UI 용 / 애니메이션
+  // 마우스 오버 상태
+  const [isOver, setIsOver] = useState(false);
+
   const header = useRef(null);
+  // 모바일 메뉴 관련
+  const mbBt = useRef(null);
+  // 로고 영역
+  const headerLogoLink = useRef(null);
+
+  // JSX Element  렌더링 완료시
   useEffect(() => {
-    //const header = document.querySelector(".header");
+    // const headerLogoLink = document.querySelector(".header-logo-link");
+    headerLogoLink.current.addEventListener("mouseenter", function () {
+      // logoSlide.autoplay.start();
+      setIsOver(true);
+    });
+    headerLogoLink.current.addEventListener("mouseleave", function () {
+      // logoSlide.autoplay.stop();
+      // logoSlide.slideTo(0);
+      setIsOver(false);
+    });
+
+    // const header = document.querySelector(".header");
     const headerActiveClass = "line-active";
     const headerActiveValue = 0;
-    // 주석은 퍼블릭 header.js 참조
-    const showLine = (_html, _tgY, _active, _scY) => {
+    function showLine(_html, _tgY, _active, _scY) {
       if (_scY > _tgY) {
         _html.classList.add(_active);
       } else {
         _html.classList.remove(_active);
       }
-    };
+    }
     showLine(
       header.current,
       headerActiveValue,
       headerActiveClass,
-      window.scrollY
+      window.scrollY,
     );
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", function () {
       showLine(
         header.current,
         headerActiveValue,
         headerActiveClass,
-        window.scrollY
+        window.scrollY,
       );
     });
     return () => {
-      window.removeEventListener("scroll", () => {
+      window.removeEventListener("scroll", function () {
         showLine(
           header.current,
           headerActiveValue,
           headerActiveClass,
-          window.scrollY
+          window.scrollY,
         );
       });
     };
   }, []);
 
-  // json 연동 시 - 빽엔드 연동 >
-  // fetch로 했다가 exios로 고친다.
-  const json = useEffect(() => {}, []);
-  // animation
+  useEffect(() => {
+    mbBt.current.addEventListener("click", function (e) {
+      // a태그 막기
+      e.preventDefault();
+      // 상위 컴포넌트로 부터 Props 전달 받아 실행
+      clickMbbt();
+    });
+
+    return () => {
+      mbBt.current.removeEventListener("click", function (e) {
+        // a태그 막기
+        e.preventDefault();
+        // 상위 컴포넌트로 부터 Props 전달 받아 실행
+        clickMbbt();
+      });
+    };
+  }, []);
+
+  // 버튼의 디자인을 위한 클래스 추가/제거
+  useEffect(() => {
+    // 업데이트 기능
+    if (mbMenuOpen) {
+      mbBt.current.classList.add("mobile-menu-open");
+    } else {
+      mbBt.current.classList.remove("mobile-menu-open");
+    }
+
+    return () => {};
+  }, [mbMenuOpen]);
 
   return (
-    <header ref={header} className="header">
-      {/* <!-- 상단 로고 --> */}
+    <header className="header" ref={header}>
       <div className="inner">
+        {/* <!-- 상단 로고 --> */}
         <div className="header-logo">
-          <a className="header-logo-link" href="index.html">
+          <a
+            href="index.html"
+            className="header-logo-link"
+            ref={headerLogoLink}
+          >
             <img
-              src="./www/images/etc/logo-kakao.png"
+              src="./images/etc/logo-kakao.png"
               alt="카카오브레인 블로그"
               className="header-logo-img"
             />
-            {/* <!-- start 로고 슬라이드 교수님 컨벤션 id = js / className = css --> */}
-            {/* <!-- end 로고 슬라이드 --> */}
-            <div className="header-logo-slide" id="logo-slide">
-              {/* <!-- swlogo -> swiper-logo --> */}
-              <div className="swiper swlogo">
-                <div className="swiper-wrapper">
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog01.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog02.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog03.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog04.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog05.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog06.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog07.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog08.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                  <div className="swiper-slide">
-                    <img
-                      src="./www/images/etc/logo-blog09.png"
-                      alt="카카오브레인 블로그"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SlideLogo isOver={isOver}></SlideLogo>
           </a>
         </div>
 
-        {/* <!-- 상단 메뉴 > nav = navigation --> */}
+        {/* <!-- 상단 메뉴 --> */}
         <nav className="header-navi">
           <ul className="navi-list">
             <li>
@@ -140,7 +128,7 @@ const Header = () => {
               <a href="#"></a>
             </li>
             <li className="mobile-menu">
-              <a href="#"></a>
+              <a href="#" ref={mbBt}></a>
             </li>
           </ul>
         </nav>
@@ -148,5 +136,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;

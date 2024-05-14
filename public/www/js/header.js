@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
     showLine(header, headerActiveValue, headerActiveClass, window.scrollY);
   });
 });
-
+// 모바일 메뉴 관련
 window.addEventListener("load", function () {
   // 필요로 한 DOM 요소 보관
   // 버튼

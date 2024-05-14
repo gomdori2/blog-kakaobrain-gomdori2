@@ -33,12 +33,14 @@
 // load가 된 후에 js를 실행해라
 // 아래 구문은 html 태그, css 파일, image 파일, js 파일 등이 로드완료 시 실행
 // 리소스 준비된 후 실행
+
 window.addEventListener("load", function () {
   const logoSlide = new Swiper(".swlogo", {
     effect: "fade",
     speed: 500,
     autoplay: {
       delay: 500,
+      // 사용자가 슬라이드를 움직여도 autoplay 그대로 되게 둬라.
       disableOnInteraction: false,
     },
   });
