@@ -10,29 +10,31 @@
   z-index: 999999999;
   background: rgba(0, 0, 0, 0.7);
 }
-
 .popup-content {
   position: relative;
   width: 60%;
   padding: 50px;
-  background: #fff;
+  background: #ffffff;
   line-height: 20px;
   border-radius: 10px;
 }
 .popup-content strong {
   display: block;
-  font-weight: 700;
   margin-bottom: 5px;
+  font-weight: 700;
 }
 .popup-close {
   position: absolute;
   top: 20px;
   right: 20px;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background: #fff;
-  border: none;
   cursor: pointer;
   border-radius: 5px;
 }
+
 .popup-close:hover {
-  background: #fff;
+  background: #f668b5;
+  color: #ffffff;
 }

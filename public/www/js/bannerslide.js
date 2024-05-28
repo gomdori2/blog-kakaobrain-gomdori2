@@ -1,59 +1,32 @@
-window.addEventListener("load", () => {
-  // 할일
+window.addEventListener("load", function () {
   const dataUrl = "./apis/banner.json";
   fetch(dataUrl)
-    .then((reponse) => {
-      const result = reponse.json();
+    .then(respose => {
+      const result = respose.json();
       return result;
     })
-    .then((result) => {
-      let tags = "";
-      result.forEach((item) => {
+    .then(result => {
+      let tagS = "";
+      for (let i = 0; i < result.length; i++) {
+        const obj = result[i];
         const temp = `<div class="swiper-slide">
-        <a href="${item.url}" style="background : url('./images/${item.pic}') no-repeat center; background-size : cover;">
-          <p class="slide-title">${item.title}</p>
-        </a>
-      </div>`;
-        tags += temp;
-      });
-      // for (let i = 0; i < result.length; i++) {
-      //   const obj = result[i];
-      //   const temp = `<div class="swiper-slide">
-      //   <a href="${obj.url}" style="background : url('./images/${obj.pic}') no-repeat center; background-size : cover;">
-      //     <p class="slide-title">${obj.title}</p>
-      //   </a>
-      // </div>`;
-      //   tags += temp;
-      // }
-
-      const whereTag = {
-        slideTag: document.querySelector(".bannerslide .swiper-wrapper"),
-        eventConTag: document.querySelector(".main-top-slide"),
-      };
-
-      whereTag.slideTag.innerHTML = tags;
-
+            <a href="${obj.url}" style="background: url('./images/${obj.pic}') no-repeat center; background-size:cover;">
+            <p class="slide-title">${obj.title}</p>
+            </a>
+        </div>`;
+        tagS = tagS + temp;
+      }
+      const whereTag = document.querySelector(".bannerslide .swiper-wrapper");
+      whereTag.innerHTML = tagS;
       const bannerSlide = new Swiper(".bannerslide", {
         loop: true,
-        speed: 800,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
       });
-      whereTag.eventConTag.addEventListener("mouseenter", function () {
-        bannerSlide.autoplay.start();
-      });
-
-      whereTag.eventConTag.addEventListener("mouseleave", function () {
-        bannerSlide.autoplay.stop();
-      });
     })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
     });
 });

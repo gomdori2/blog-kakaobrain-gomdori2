@@ -4,7 +4,6 @@
   justify-content: space-between;
   margin-top: 60px;
 }
-
 .main-bottom h2 {
   margin-bottom: 30px;
   font-size: 24px;
@@ -14,11 +13,13 @@
 
 .list-wrap {
   display: flex;
+
   gap: 2.56%;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 60px;
 }
+
 .list-box {
   width: 30%;
   display: block;
@@ -27,8 +28,8 @@
 }
 
 .list-box:hover .list-box-img {
-  filter: drop-shadow(0px 25px 25px rgb(0 0 0 / 0.2));
   transform: translateY(-10px);
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.2));
 }
 
 .list-box-img {
@@ -42,13 +43,11 @@
 }
 
 .list-box-cate {
-  /* 중앙으로 글자 보내기 */
   display: flex;
   gap: 4px;
   align-items: center;
   margin-bottom: 18px;
 }
-
 .list-box-cate img {
   width: 24px;
   height: 24px;
@@ -64,23 +63,26 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
-  color: #000;
+  color: #000000;
   word-break: keep-all;
 }
-.lsit-box-day {
+
+.list-box-day {
   font-size: 14px;
   color: #cccccc;
 }
+
 .main-bottom-list {
   width: 71.79%;
   max-width: 840px;
 }
-.main-bottom-list-new {
+.main-bottom-list-news {
 }
 .main-bottom-list-banner {
   margin-bottom: 60px;
   overflow: hidden;
 }
+
 .list-banner-link {
   width: 100%;
   height: 160px;
@@ -88,7 +90,6 @@
   background: #031efb url("../images/1pc.png") no-repeat center;
   background-size: 100%;
 }
-
 .main-bottom-list-picks {
 }
 .cardslide {
@@ -96,13 +97,13 @@
   height: 100%;
   overflow: visible !important;
 }
-
 .cardslide .swiper-wrapper {
   display: block;
 }
+
+/* 반응형 */
 @media all and (max-width: 1024px) {
   .main-bottom {
-    /* 화면 크기 줄이면 요소들을 내려야한다. */
     flex-wrap: wrap;
   }
   .main-bottom-list {
@@ -117,38 +118,31 @@
     max-height: 760px;
   }
 }
+
 .main-bottom-cards {
   width: 25.64%;
   max-width: 300px;
 }
-.main-bottom-cards h2 {
-  color: #0c127c;
-}
 
 .card-link {
   width: 100%;
-  /* 가로가 변하면 % - > 세로가 변하면 vw */
   height: 330px;
   display: flex;
-  /* 가로 배치는 신경 x */
   align-items: flex-end;
   margin-bottom: 30px;
 
-  /* shadow box까지 없애버림. */
   overflow: hidden;
   background: url("../images/p1.png") no-repeat center;
   background-size: cover;
 
-  /* 배치된 내용의 좌표 (x,y)가 이동한다. */
-  /* 꼼꼼하면 명명 아니면 all > all 자리에 transform  */
+  /* 배치된 내용의 좌표(x, y) 가 이동한다. */
   transition: all 0.2s ease-in;
 }
 .card-link:hover {
-  /* 위로 좌표 변경 */
-  /* default 값 0 > 모니터 기준으로 - 는 위 */
   transform: translateY(-10px);
-  filter: drop-shadow(0px 25px 25px rgb(0 0 0 / 0.2));
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.2));
 }
+
 .card-txt {
   width: 100%;
   height: 70px;
@@ -160,25 +154,26 @@
 .card-title {
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
 }
 .card-count {
   display: block;
   margin-left: 3px;
-  /* 공간을 넓혀서 색주기위함. */
   padding: 5px 10px;
   background: rgba(255, 255, 255, 0.1);
   font-size: 10px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   border-radius: 10px;
 }
 
+/* 반응형 */
 @media all and (max-width: 1024px) {
   .main-bottom-cards {
-    width: 1024px !important;
-    max-width: 1024px !important;
+    width: 1024px;
+    max-width: 1024px;
   }
+
   .card-link {
     width: 240px;
     height: 266px;

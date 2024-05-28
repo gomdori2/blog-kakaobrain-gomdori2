@@ -19,22 +19,22 @@
   width: 100%;
   height: auto;
 }
+
 .footer-top-info-desc {
   margin-bottom: 30px;
   font-size: 14px;
-  /* default */
   font-weight: 400;
   line-height: 20px;
   color: #999999;
 }
 
 .bt-orange {
-  /* 내용물 만큼 영역 잡는다. */
   display: inline-block;
   border: 1px solid #fec62c !important;
   background: #fec62c !important;
   color: #1e1e1e !important;
 }
+
 .footer-top-sitemap {
   display: flex;
   gap: 80px;
@@ -48,16 +48,18 @@
   margin-bottom: 30px;
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
 }
+
 .footer-top-sitemap dl dd {
   margin-bottom: 30px;
 }
+
 .footer-top-sitemap dl dd a {
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  color: #999;
+  color: #999999;
   white-space: nowrap;
 }
 
@@ -92,7 +94,8 @@
   font-size: 14px;
   color: #666666;
 }
-
+.footer-bottom-sns {
+}
 .sns-list {
   display: flex;
   gap: 20px;
@@ -105,9 +108,7 @@
   color: #807f80;
 }
 .sns-list li a:hover {
-  color: #ccc;
-}
-.footer-bottom-sns {
+  color: #cccccc;
 }
 
 @media all and (max-width: 1024px) {

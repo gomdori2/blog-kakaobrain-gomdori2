@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <link>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>카카오브레인 Blog</title>
-    <!-- npm 설치가 없음. 그냥 html로 사용하자. -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
     <link rel="stylesheet" href="./css/reset.css" />
-    <!-- 파일 보관 -->
     <link rel="stylesheet" href="./css/common.css" />
+
     <link rel="stylesheet" href="./css/popup.css" />
+
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/maintop.css" />
@@ -18,8 +18,9 @@
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- 외부 js 파일 방식 진행 -->
+    <!-- 외부 js 파일 방식 으로 진행 -->
     <script src="./js/popup.js"></script>
+
     <script src="./js/header.js"></script>
     <script src="./js/logo.js"></script>
     <script src="./js/topslide.js"></script>
@@ -33,76 +34,73 @@
     <div class="popup">
       <div class="popup-content">
         <p>
-          <strong>
-              해당 사이트는 스터디용으로 제작되었으며, 모든 리소스의 저작권은 원저작자에게 있습니다.<br/>
-            * 본 사이트는 Chrome 에 최적화되어 있습니다. <br/>
-            * 해당 사이트와 관련한 문제가 있으면 여기로 연락바랍니다
-          </strong>
+          <strong>해당 사이트는 스터디용으로 제작되었으며, 모든 리소스의 저작권은 원저작자에게 있습니다.</strong> <br />
+          * 본 사이트는 Chrome 에 최적화되어 있습니다. <br />
+          * 해당 사이트와 관련한 문제가 있으면 연락을 주시면 감사하겠습니다.
         </p>
-        <button class="popup-close"><b>❌</b></button>
+        <button class="popup-close">창닫기</button>
       </div>
     </div>
     <!-- 전체 레이아웃 -->
     <div class="wrap">
       <!-- 상단 레이아웃 -->
       <header class="header">
-        <!-- 상단 로고 -->
         <div class="inner">
+          <!-- 상단 로고 -->
           <div class="header-logo">
-            <a class="header-logo-link" href="index.html">
-              <img src="./images/etc/logo-kakao.png" alt="카카오브레인 블로그" class="header-logo-img"/>
-              <!-- start 로고 슬라이드 교수님 컨벤션 id = js / class = css -->
-              <!-- end 로고 슬라이드 -->
+            <a href="index.html" class="header-logo-link">
+              <img src="./images/etc/logo-kakao.png" alt="카카오브레인 블로그" class="header-logo-img" />
+              <!-- start 로고 슬라이드 -->
               <div class="header-logo-slide" id="logo-slide">
-                <!-- swlogo -> swiper-logo -->
                 <div class="swiper swlogo">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog01.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog01.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog02.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog02.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog03.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog03.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog04.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog04.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog05.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog05.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog06.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog06.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog07.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog07.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog08.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog08.png" alt="카카오브레인 블로그" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="./images/etc/logo-blog09.png" alt="카카오브레인 블로그"/>
+                      <img src="./images/etc/logo-blog09.png" alt="카카오브레인 블로그" />
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- end 로고 슬라이드 -->
             </a>
           </div>
 
-          <!-- 상단 메뉴 > nav = navigation -->
+          <!-- 상단 메뉴 -->
           <nav class="header-navi">
-              <ul class="navi-list">
-                <li><a href="#">소식</a></li>
-                <li><a href="#">팀&크루</a></li>
-                <li><a href="#">영입</a></li>
-                <li class="navi-search">
-                  <a href="#"></a>
-                </li>
-                <li class="mobile-menu">
-                  <a href="#"></a>
-                </li>
-              </ul>
+            <ul class="navi-list">
+              <li><a href="#">소식</a></li>
+              <li><a href="#">팀&크루</a></li>
+              <li><a href="#">영입</a></li>
+              <li class="navi-search">
+                <a href="#"></a>
+              </li>
+              <li class="mobile-menu">
+                <a href="#"></a>
+              </li>
+            </ul>
           </nav>
         </div>
       </header>
@@ -118,76 +116,83 @@
           </ul>
         </div>
       </div>
-      
-      <hr/>
+
       <!-- 메인 레이아웃 -->
       <main class="main">
         <div class="inner">
-          <!-- 메인상단 영역 -->
+          <!-- 메인 상단 -->
           <div class="main-top">
-            
-            
+            <!-- 슬라이드 -->
             <div class="main-top-slide br-20">
-              <!-- Swiper -->
+              <!-- Start 상단 슬라이드 -->
               <div class="swiper topslide">
-                <div class="swiper-wrapper">
-                 <!-- 외부 데이터 연동 -->
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>    
-            </div>
-            <!-- 타이틀 배너 슬라이드 -->
-            <div class="main-top-banner br-20">
-              <!-- start 타이틀 배너 -->
-              <div class="swiper bannerslide">
                 <div class="swiper-wrapper">
                   <!-- 외부 데이터 연동 -->
                   <!-- <div class="swiper-slide">
                     <a href="#">
                       <p class="slide-title">
-                        영입 중
+                        카카오브레인의<br />
+                        연구문화
+                      </p>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <p class="slide-title">
+                        카카오브레인의<br />
+                        연구문화
                       </p>
                     </a>
                   </div> -->
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
-              <!-- end 타이틀 배너 -->
-              
+              <!-- End 상단 슬라이드 -->
+            </div>
+            <!-- 타이틀 배너 슬라이드 -->
+            <div class="main-top-banner br-20">
+              <!-- Start 타이틀 배너 -->
+              <div class="swiper bannerslide">
+                <div class="swiper-wrapper">
+                  <!-- 외부 데이터 연동 -->
+                  <!-- <div class="swiper-slide">
+                    <a href="#">
+                      <p class="slide-title">영입 중</p>
+                    </a>
+                  </div> -->
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- End 타이틀 배너 -->
             </div>
           </div>
-          <!-- 메인하단영역 -->
+          <!-- 메인 하단 -->
           <div class="main-bottom">
             <!-- 메인 리스트 영역 -->
             <div class="main-bottom-list">
-              <!-- 새글리스트 -->
-              <div class="main-bottom-list-new">
+              <!-- 새글 리스트 -->
+              <div class="main-bottom-list-news">
                 <h2>NEW. 따끈따끈 새로 나온 글 🔥</h2>
-                
-                <div id="news" class="list-wrap">
+                <div class="list-wrap" id="news">
                   <!-- 데이터 연동 -->
-                  
                 </div>
               </div>
               <!-- 배너 -->
               <div class="main-bottom-list-banner br-20">
-                <a href="" class="list-banner-link">
-                  
-                </a>
+                <a href="#" class="list-banner-link"></a>
               </div>
               <!-- 추천글 리스트 -->
               <div class="main-bottom-list-picks">
-                <h2>
-                  Editor’s Pick 🏃🏻‍♀🏃‍♂🏃🏽
-                </h2>
+                <h2>Editor’s Pick 🏃🏻‍♀️🏃‍♂️🏃🏽</h2>
                 <div class="list-wrap" id="crew">
-                  
-                </div>  
+                  <!-- 외부 데이터 연동 -->
+                </div>
                 <div class="bt-wrap">
                   <a href="#" class="bt-more">더보기</a>
                 </div>
               </div>
             </div>
+
             <!-- 메인 카드 영역 -->
             <div class="main-bottom-cards">
               <h2>폴더 📁</h2>
@@ -200,8 +205,9 @@
                   </div>
                 </div>
               </div>
+
               <div class="bt-wrap">
-                <a href="#" class="bt-more">폴더 전체보기</a>
+                <a href="#" class="bt-more">전체보기</a>
               </div>
             </div>
           </div>
@@ -209,16 +215,16 @@
       </main>
       <!-- 하단 레이아웃 -->
       <footer class="footer">
-        <!-- 하단 사이트정보 및 사이트 맵  -->
+        <!-- 하단 사이트 정보 및 사이트 맵 -->
         <div class="footer-top">
           <div class="inner">
-            <!-- 회사 소개 -->
+            <!-- 회사소개 -->
             <div class="footer-top-info">
               <a href="#" class="footer-logo">
-                <img src="./images/etc/logo-kakao-footer.png" alt="카카오브레인">
+                <img src="./images/etc/logo-kakao-footer.png" alt="카카오브레인" />
               </a>
               <p class="footer-top-info-desc">
-                카카오브레인의 혁신은 모든 크루의 물음에서 시작합니다.<br />
+                카카오브레인의 혁신은 모든 크루의 물음에서 시작합니다. <br />
                 AI 없이는 상상할 수 없는 세상을 만들기 위해선 생각하지 못한 많은 물음이 필요합니다.<br />
                 세상을 변화시킬 수 있는 새로운 물음을 던질 크루를 기다립니다.
               </p>
@@ -226,10 +232,11 @@
             </div>
             <!-- 사이트맵 -->
             <div class="footer-top-sitemap">
-              
               <dl>
                 <dt>정보</dt>
-                <dd><a href="#">영입페이지 <i class="xi-arrow-up rot-45"></i></a></dd>
+                <dd>
+                  <a href="#">영입페이지 <i class="xi-arrow-up rot-45"></i></a>
+                </dd>
                 <dd><a href="#">이메일무단수집거부</a></dd>
                 <dd><a href="#">개인정보처리방침</a></dd>
                 <dd><a href="#">오시는 길</a></dd>
@@ -239,7 +246,7 @@
                 <dt>문의</dt>
                 <dd><a href="#">영입</a></dd>
                 <dd><a href="#">PR</a></dd>
-                <dd><a href="#">마케팅·사업제휴</a></dd>
+                <dd><a href="#">마케팅∙사업제휴</a></dd>
               </dl>
             </div>
           </div>
@@ -248,34 +255,29 @@
         <div class="footer-bottom">
           <div class="inner">
             <!-- 카피라이터 -->
-            <div class="footer-bottom-copyright" >
-              <!-- copy가 활성화 되면 copy 태그 사용 -->
+            <div class="footer-bottom-copyright">
               <span class="copy">Kakao Brain Corp. @ All rights reserved.</span>
             </div>
-            <!-- sns 목록 -->
+            <!-- SNS 목록 -->
             <div class="footer-bottom-sns">
               <ul class="sns-list">
                 <li>
-                  <a href="" class="xi-linkedin"></a>
+                  <a href="#"><i class="xi-linkedin"></i></a>
                 </li>
-                
                 <li>
-                  <a href="" class="xi-youtube-play"></a>
+                  <a href="#"><i class="xi-youtube-play"></i></a>
                 </li>
-                
                 <li>
-                  <a href="" class="xi-github"></a>
+                  <a href="#"><i class="xi-github"></i></a>
                 </li>
-                
                 <li>
-                  <a href="" class="xi-facebook"></a>
+                  <a href="#"><i class="xi-facebook"></i></a>
                 </li>
-                
               </ul>
             </div>
-          </div> 
+          </div>
         </div>
       </footer>
     </div>
   </body>
-  </html>
+</html>

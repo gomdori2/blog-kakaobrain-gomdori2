@@ -1,71 +1,55 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import SlideTopBannerItem from "./SlideTopBannerItem";
+import { getBanner, getTopslide } from "../apis/api";
 
+// swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+// swiper css
+import "swiper/css";
+import "swiper/css/pagination";
+
+// 정리 다시해야함.
 const SlideTopBanner = () => {
-  const eventConTag = useRef(null);
-  const slideTag = useRef(null);
+  // js 코드 자리
+  const whereTag = useRef(null);
+  const [bannerData, setBannerData] = useState([]);
+  const swiperOption = {
+    loop: true,
+    pagination: true,
+    // pagination: { el: ".swiper-pagination", clickable: true },
+    modules: { Pagination },
+  };
+  // axios 를 연동하는 경우는 2가지 경우가 많다.
+  // 1. 초기 화면 출력용 api (로딩창 ? )
+  // 2. 사용자 행동에 따른 api
+
+  // 1번용 axios 를 위해서 useEffect 를 쓴다.
+  // axios 를 컴포넌트에서 사용할때 비동기 함수로 처리함.
+
+  const getBannerCall = async () => {
+    const result = await getBanner();
+    // 화면 갱신을 위해서 useState 로 담아야 한다.
+    setBannerData(result);
+  };
 
   useEffect(() => {
-    const dataUrl = "./apis/banner.json";
-    fetch(dataUrl)
-      .then(reponse => {
-        const result = reponse.json();
-        return result;
-      })
-      .then(result => {
-        console.log(result);
-        let tags = "";
-        result.forEach(item => {
-          const temp = `<div class="swiper-slide">
-              <a href="${item.url}" style="background : url('./images/${item.pic}') no-repeat center; background-size : cover;">
-                <p class="slide-title">${item.title}</p>
-              </a>
-            </div>`;
-          tags += temp;
-        });
-        // for (let i = 0; i < result.length; i++) {
-        //   const obj = result[i];
-        //   const temp = `<div class="swiper-slide">
-        //   <a href="${obj.url}" style="background : url('./images/${obj.pic}') no-repeat center; background-size : cover;">
-        //     <p class="slide-title">${obj.title}</p>
-        //   </a>
-        // </div>`;
-        //   tags += temp;
-        // }
-
-        slideTag.current.innerHTML = tags;
-
-        const bannerSlide = new Swiper(".bannerslide", {
-          loop: true,
-          speed: 800,
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
-        eventConTag.current.addEventListener("mouseenter", function () {
-          bannerSlide.autoplay.start();
-        });
-
-        eventConTag.current.addEventListener("mouseleave", function () {
-          bannerSlide.autoplay.stop();
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    getBannerCall();
+    return () => {};
   }, []);
   return (
-    <div className="main-top-banner br-20" ref={eventConTag}>
-      {/* <!-- Start 타이틀 배너 --> */}
-      <div className="swiper bannerslide" ref={slideTag}>
-        <div className="swiper-wrapper">{/* <!-- 외부 데이터 연동 --> */}</div>
-        <div className="swiper-pagination"></div>
-      </div>
-      {/* <!-- End 타이틀 배너 --> */}
+    <div className="main-top-banner br-20">
+      <Swiper className="bannerslide" {...swiperOption}>
+        {bannerData.map((item, index, arr) => (
+          <SwiperSlide key={index}>
+            <SlideTopBannerItem
+              url={item.url}
+              pic={item.pic}
+              title={item.title}
+            ></SlideTopBannerItem>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
